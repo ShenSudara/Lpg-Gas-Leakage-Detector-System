@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">LpgGasLeakageDetector</string>
+    <string name="loading_text">Loading...</string>
+    <string name="device_txt">Device</string>
+    <string name="device_online_txt">Online</string>
+    <string name="gas_increased_header">Gas Increased by</string>
+    <string name="zero_percent_txt">0.0 %</string>
+    <string name="temp_increased_header">Heat Increased by</string>
+    <string name="device_info_txt">Device Info</string>
+    <string name="gas_level_txt">Gas Level</string>
+    <string name="min_gas_level_txt">Minimum Gas Level</string>
+    <string name="temperature_lvl_txt">Heat Level</string>
+    <string name="gas_alarm_activated_txt">Gas Alarm Activated  %</string>
+    <string name="temp_alarm_activated_txt">Heat Alarm Activated  %</string>
+    <string name="min_temperature_level_txt">Minimum Heat Level</string>
+    <string name="alarm_txt">Alarms</string>
+    <string name="gas_alarm_txt">Gas Alarm</string>
+    <string name="temp_alarm_txt">Heat Alarm</string>
+    <string name="device_name_txt">Device Name</string>
+    <string name="channel_name">Fire Detector</string>
+    <string name="channel_description" />
+</resources>

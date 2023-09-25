@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".designs.HomeScreen">
+
+<!--Top tool bar-->
+<!--Device text-->
+<!--Device Selector-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/left_margin"
+            android:text="@string/device_txt"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/h3" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/device_name_dropdown"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:placeholderText="@string/device_name_txt"
+            android:focusable="false">
+            <AutoCompleteTextView
+                android:id="@+id/device_name_dropdown_data"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:inputType="none"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/h6"
+                android:padding="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+        <!--    Device On Off Switch-->
+        <com.google.android.material.materialswitch.MaterialSwitch
+            style="@style/CustomMaterialSwitch"
+            android:id="@+id/device_on_off_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/right_margin"
+            android:checked="false"
+            android:textOff="Off"
+            android:textOn="On"/>
+    </LinearLayout>
+
+    <!--Gas Increased Percentage Card-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/left_margin"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/NIGHT_DARK_BLUE"
+        android:minWidth="180dp"
+        android:minHeight="180dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/gas_increased_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:indeterminate="true"
+            app:indicatorColor="@color/white"
+            app:indicatorSize="70dp"
+            app:trackColor="@color/dark_grey"
+            app:trackCornerRadius="15dp"
+            app:trackThickness="8dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="110dp"
+            android:text="@string/gas_increased_header"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/h5" />
+        <TextView
+            android:id="@+id/gas_increased_percentage_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"
+            android:text="@string/zero_percent_txt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--    Temperature Increased Percentage Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="@dimen/right_margin"
+        android:backgroundTint="@color/dark_red"
+        android:minWidth="180dp"
+        android:minHeight="180dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/temp_increased_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:indeterminate="true"
+            app:indicatorColor="@color/white"
+            app:indicatorSize="70dp"
+            app:trackColor="@color/dark_grey"
+            app:trackCornerRadius="15dp"
+            app:trackThickness="8dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="110dp"
+            android:text="@string/temp_increased_header"
+            android:textColor="@color/light_grey"
+            android:textSize="@dimen/h5" />
+        <TextView
+            android:id="@+id/temp_increased_percentage_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"
+            android:text="@string/zero_percent_txt"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    Device Info Text-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="260dp"
+        android:text="@string/device_info_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/h3"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <!--Table of the device status-->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        <!--        Gas Level-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/smoke_icon_24"/>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/gas_level_txt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5" />
+            <TextView
+                android:id="@+id/gas_level_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="595"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5"
+                android:textStyle="bold"
+                android:gravity="right|end"/>
+        </TableRow>
+<!--        Minimum gas level-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/minimum_icon"/>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/min_gas_level_txt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5" />
+            <TextView
+                android:id="@+id/min_gas_level_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="595"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5"
+                android:textStyle="bold"
+                android:gravity="right|end"/>
+        </TableRow>
+<!--        Gas Alarm Activated Percentage-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/warning_icon"/>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/gas_alarm_activated_txt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5" />
+            <TextView
+                android:id="@+id/alarm_activate_gas_percent_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="595"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5"
+                android:textStyle="bold"
+                android:gravity="right|end"/>
+        </TableRow>
+        <!--        Temperature level-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/temperature_icon"/>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/temperature_lvl_txt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5" />
+            <TextView
+                android:id="@+id/temp_level_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="595"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5"
+                android:textStyle="bold"
+                android:gravity="right|end"/>
+        </TableRow>
+        <!--        Minimum Temperature level-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="5dp">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/minimum_icon"/>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/min_temperature_level_txt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5" />
+            <TextView
+                android:id="@+id/min_temp_level_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="595"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5"
+                android:textStyle="bold"
+                android:gravity="right|end"/>
+        </TableRow>
+<!--        Alarm Activated Heat Level-->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingVertical="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/warning_icon"/>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/temp_alarm_activated_txt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5" />
+            <TextView
+                android:id="@+id/alarm_activate_temp_percent_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="595"
+                android:textColor="@color/black"
+                android:textSize="@dimen/h5"
+                android:textStyle="bold"
+                android:gravity="right|end"/>
+        </TableRow>
+    </TableLayout>
+
+<!--    Alarm Buttons and texts-->
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="146dp"
+        android:text="@string/alarm_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/h3"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+<!--    Gas Alarm Text-->
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/left_margin"
+        android:layout_marginTop="25dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/gas_alarm_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/h4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+<!--    Tempurature Alarm Text-->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="@dimen/right_margin"
+        android:paddingHorizontal="10dp"
+        android:text="@string/temp_alarm_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/h4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+<!--    Gas Alarm-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gas_alarm_btn"
+        style="@style/Widget.Material3.Button.Icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/left_margin"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/light_green"
+        app:cornerRadius="100dp"
+        app:icon="@drawable/alarm_off_icon"
+        app:iconPadding="0dp"
+        app:iconGravity="textStart"
+        app:iconSize="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+<!--    Heat Alarm-->
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Material3.Button.Icon"
+        android:id="@+id/heat_alarm_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/top_margin"
+        android:layout_marginEnd="@dimen/right_margin"
+        android:backgroundTint="@color/light_green"
+        app:cornerRadius="100dp"
+        app:icon="@drawable/alarm_off_icon"
+        app:iconPadding="0dp"
+        app:iconGravity="textStart"
+        app:iconSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
