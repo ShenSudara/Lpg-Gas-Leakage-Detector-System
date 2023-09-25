@@ -15,12 +15,12 @@
 #define SERIAL_LATCH 15
 
 //WiFi Credintials
-#define WIFI_SSID "shen"
-#define WIFI_PASSWORD "shen2002"
+#define WIFI_SSID "SSID"
+#define WIFI_PASSWORD "PASSWORD"
 
 //Firebase Authentications
-#define FIREBASE_HOST "nodemcutestdb-default-rtdb.firebaseio.com"
-#define FIREBASE_AUTH "VyQ8GmaSDKbSBnG8OT6gaRObOTzdHE7y7QPzSiNm"
+#define FIREBASE_HOST "YOUR_FIREBASE_HOST"
+#define FIREBASE_AUTH "YOUR_FIREBASE_AUTH"
 
 //Shift registor Library
 ShiftRegister74HC595<1> sr(D6, D7, D8);
